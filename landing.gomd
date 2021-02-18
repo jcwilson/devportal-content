@@ -39,7 +39,7 @@ The following services are exposed through this Ambassador instance:
                 {{end}}
             </td>
             <td>
-                <pre>{{$element | toYaml}}</pre>
+                <pre>{{$element}}</pre>
             </td>
         </tr>
         {{end}}
