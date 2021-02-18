@@ -44,19 +44,23 @@ The following services are exposed through this Ambassador instance:
                 Element
             </td>
             <td>
-                <pre>{{$element}}</pre>
+                <code>{{$element}}</code>
             </td>
+        </tr>
+        <tr>
             <td>
                 Element.Metadata
             </td>
             <td>
-                <pre>{{$element.Metadata}}</pre>
+                <code>{{$element.Metadata}}</code>
             </td>
+        </tr>
+        <tr>
             <td>
                 Element.Service
             </td>
             <td>
-                <pre>{{$element.Service}}</pre>
+                <code>{{$element.Service}}</code>
             </td>
         </tr>
         {{end}}
