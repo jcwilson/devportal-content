@@ -39,30 +39,6 @@ The following services are exposed through this Ambassador instance:
                 {{end}}
             </td>
         </tr>
-        <tr>
-            <td>
-                Element
-            </td>
-            <td>
-                <code>{{$element}}</code>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Element.Metadata
-            </td>
-            <td>
-                <code>{{$element.Metadata}}</code>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Element.Service
-            </td>
-            <td>
-                <code>{{$element.Service}}</code>
-            </td>
-        </tr>
         {{end}}
     </tbody>
 </table>
