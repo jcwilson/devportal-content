@@ -7,7 +7,7 @@
 
 ## Customizing the Portal
 
-This content is fully customizable for your specific needs. 
+This content is fully customizable for your specific needs.
 For details on customizing the portal, see https://www.getambassador.io/reference/dev-portal.
 
 ## Available Services
@@ -25,20 +25,23 @@ The following services are exposed through this Ambassador instance:
         {{range $i, $element := .S.K8sStore.Slice }}
         {{if isEven $i }}
         <tr style="background: rgba(86,61,124,.05);">
-            {{else}}
-            <tr>
+        {{else}}
+        <tr>
+        {{end}}
+            <td>
+                <samp>{{$element.Service.Name}}</samp>
+            </td>
+            <td>
+                {{if $element.Metadata.HasDoc}}
+                <a href="{{$.Prefix}}doc/{{$element.Service.Namespace}}/{{$element.Service.Name}}"><code>API Documentation</code></a>
+                {{else}}
+                <code><span style="color:red">No API Documentation</span></code>
                 {{end}}
-                <td>
-                    <samp>{{$element.Service.Namespace}}.{{$element.Service.Name}}</samp>
-                </td>
-                <td>
-                    {{if $element.Metadata.HasDoc}}
-                    <a href="{{$.Prefix}}doc/{{$element.Service.Namespace}}/{{$element.Service.Name}}"><code>API Documentation</code></a>
-                    {{else}}
-                    <code><span style="color:red">No API Documentation</span></code>
-                    {{end}}
-                </td>
-            </tr>
-            {{end}}
+            </td>
+            <td>
+                <pre>{{$element | toYaml}}</pre>
+            </td>
+        </tr>
+        {{end}}
     </tbody>
 </table>
