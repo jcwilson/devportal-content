@@ -38,8 +38,25 @@ The following services are exposed through this Ambassador instance:
                 <code><span style="color:red">No API Documentation</span></code>
                 {{end}}
             </td>
+        </tr>
+        <tr>
+            <td>
+                Element
+            </td>
             <td>
                 <pre>{{$element}}</pre>
+            </td>
+            <td>
+                Element.Metadata
+            </td>
+            <td>
+                <pre>{{$element.Metadata}}</pre>
+            </td>
+            <td>
+                Element.Service
+            </td>
+            <td>
+                <pre>{{$element.Service}}</pre>
             </td>
         </tr>
         {{end}}
