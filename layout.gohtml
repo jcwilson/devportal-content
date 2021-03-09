@@ -13,13 +13,14 @@
     <link rel="stylesheet" href="{{.Prefix}}styles/master.css" type="text/css" media="all">
     {{if eq .Ctx "landing"}} {{template "landing-head" $}}
     {{else if eq .Ctx "page"}} {{template "page-magic-head" $}}
-    {{else if eq .Ctx "doc"}} {{template "swagger-head" $}}
+    {{else if eq .Ctx "doc"}} {{template "redoc-head" $}}
     {{else}} UNKNOWN CONTEXT??
     {{end}}
     {{/* re-define these in fragments/ folder if you need something specific */}}
     {{define "landing-head"}}{{end}}
     {{define "page-magic-head"}}{{end}}
     {{define "swagger-head"}}{{end}}
+    {{define "redoc-head"}}{{end}}
     {{define "landing-head"}}{{end}}
     {{define "page-magic-head"}}{{end}}
 </head>
@@ -36,12 +37,12 @@
                         <div>
                             {{if eq .Ctx "landing"}} {{template "///landing" $}}
                             {{else if eq .Ctx "page"}} {{template "///page-magic" $}}
-                            {{else if eq .Ctx "doc"}} {{template "swagger" $}}
+                            {{else if eq .Ctx "doc"}} {{template "redoc" $}}
                             {{else}} UNKNOWN CONTEXT??
                             {{end}}
                             {{define "///landing"}}{{end}}
                             {{define "///page-magic"}}{{end}}
-                            {{define "swagger"}}{{end}}
+                            {{define "redoc"}}{{end}}
                         </div>
                     </section>
                 </article>
